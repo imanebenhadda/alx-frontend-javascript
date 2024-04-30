@@ -1,19 +1,19 @@
-export default function cleanSet(inputSet, startString) {
-  const itemList = [];
+export default function cleanSet(set, startString) {
+  const list = [];
 
   if (
-    typeof inputSet !== 'object'
+    typeof set !== 'object'
     || typeof startString !== 'string'
     || startString.length === 0
   ) {
     return '';
   }
 
-  for (const item of inputSet) {
+  for (const item of set) {
     if (item && item.startsWith(startString)) {
-      itemList.push(item.slice(startString.length));
+      list.push(item.slice(startString.length));
     }
   }
 
-  return itemList.join('-');
+  return list.join('-');
 }
